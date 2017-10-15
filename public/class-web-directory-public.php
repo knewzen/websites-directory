@@ -109,8 +109,14 @@ class Web_Directory_Public {
 
 	// Add Shortcode
 	public function websitedirectory_shortcode() {
-		$data = include dirname(__FILE__).'/partials/web-directory-public-display.php';
-		return $data;
+		$display_file = dirname(__FILE__).'/partials/web-directory-public-display.php';
+		ob_start();
+		include $display_file;
+		$output = ob_get_contents();
+		ob_end_clean();
+
+		return $output;
+
 	}
 
 
