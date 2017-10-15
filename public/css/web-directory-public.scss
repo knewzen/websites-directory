@@ -1,0 +1,95 @@
+@import "bulma-0.6.0/sass/utilities/_all";
+@import "bulma-0.6.0/sass/base/_all";
+//@import "bulma-0.6.0/sass/elements/_all";
+@import "bulma-0.6.0/sass/components/card";
+@import "bulma-0.6.0/sass/grid/_all";
+//@import "bulma-0.6.0/sass/layout/_all";
+
+// styles
+.assets-card{
+  header{
+    h2{
+      font-size: 16px;
+      line-height: 20px;
+      padding: 0;
+      margin: 0;
+    }
+    a{
+      font-size: 11px;
+    }
+  }
+  p{
+    font-size: 12px;
+  }
+}
+
+#mobile-closer,#mobile-menu{
+  display: none;
+}
+
+#side-menu{
+  &.mobile{
+    background: white;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 99;
+  }
+
+  .field{
+    margin: .5em 0;
+    cursor: pointer;
+    .active{
+      color: orangered;
+    }
+    .cie-logo{
+      font-size: 10px;
+      font-style: italic;
+    }
+  }
+
+}
+@media screen and (max-width: 768px){
+  .only-desktop{
+    display: none;
+  }
+  #mobile-menu {
+    color: #3a3a3a;
+    text-align: center;
+    font-size: 32px;
+    background: #ededed;
+    border-radius: 6px;
+    max-width: 320px;
+    display: block;
+    margin: 0 auto;
+    font-weight: 300;
+    cursor: pointer;
+    &:hover{
+      background: #fffce5;
+    }
+  }
+  #side-menu {
+    display: none;
+    &.mobile {
+      display: block;
+      #mobile-closer{
+        position: absolute;
+        right: 10px;
+        top:10px;
+        color:red;
+        display: block;
+      }
+      ul {
+        padding: 2em;
+        li{
+          width: 100%;
+          padding: 0;
+          font-size: 16px;
+        }
+      }
+    }
+  }
+
+}
